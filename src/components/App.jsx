@@ -16,7 +16,7 @@ const [contacts, setContacts] = useState(() => {
 	useEffect(() => {
 		localStorage.setItem("contacts", JSON.stringify(contacts));
 	}, [contacts]);
-
+	
 	const onHandleFilter = (e) => {
 		setFilter(e.target.value);
 	};
@@ -44,7 +44,7 @@ const [contacts, setContacts] = useState(() => {
 		});
 		return true;
 	};
-	const onDeleteContact = (id) => {
+	const onDeleteItem = (id) => {
 		setContacts((prevContacts) =>
 			prevContacts.filter((item) => item.id !== id)
 		);
@@ -73,7 +73,7 @@ const [contacts, setContacts] = useState(() => {
 			{isContacts && (
 				<ContactList
 					visibleContacts={filteredContacts}
-					onDeleteContact={onDeleteContact}
+					deleteItem={onDeleteItem}
 				/>
 			)}
 			{!isContacts && (
