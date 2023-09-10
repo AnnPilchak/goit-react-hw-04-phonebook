@@ -77,7 +77,7 @@ const [contacts, setContacts] = useState(() => {
 				/>
 			)}
 			{!isContacts && (
-				<p style={{ display: "flex", justifyContent: "center" }}>
+				<p style={{ display: "flex" }}>
 					No contacts in the list
 				</p>
 			)}
